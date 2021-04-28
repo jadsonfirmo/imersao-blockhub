@@ -8,12 +8,15 @@
         <h2 class="font-weight-normal title-head">
           {{ subtitle }}
         </h2>
+        <h5 class="m-5">
+          #imersaoBlockHub #coding #frontEnd
+          </h5>
       </div>
     </div>
 
     <div class="text-center mt-5">
       <div>
-        <b-button variant="primary" @click="letsGo()">Vamos lá!</b-button>
+        <b-button variant="primary" @click="letsGo()">Let's code!</b-button>
       </div>
     </div>
   </div>
@@ -24,7 +27,7 @@ export default {
   name: "Home",
   data: () => ({
     title: "Olá, DEV!",
-    subtitle: "Bem vindo ao #coding da Imersão Pré Estágio da BlockHub!"
+    subtitle: "Bem vindo ao front-end coding da Imersão Pré Estágio da BlockHub!"
   }),
   methods: {
     letsGo() {

@@ -1,7 +1,15 @@
 <template>
   <div id="persons">
+    <!-- Componente de título -->
+    <head-pages :title="'BlockHub! Builders'">
+      <template v-slot:subtitle>
+        <span>Imersão Pré Estágio</span>
+      </template>
+    </head-pages>
+
+    <!-- Conteúdo da Tela -->
     <div class="text-center mb-3">
-      <h3>Pessoas</h3>
+      <h4>Cadastro de Pessoas</h4>
     </div>
     <div class="text-right pt-3 pb-3">
       <b-button
@@ -40,6 +48,12 @@
       </b-table>
     </div>
 
+    <div class="text-center mt-5">
+      <b-button id="remove-btn" class="bg-primary" v-on:click="verMais()">
+        Ver mais
+      </b-button>
+    </div>
+
     <!-- Alerta de sucesso -->
     <b-alert
       variant="success"
@@ -56,16 +70,19 @@
       Oops! Algo errado ocorreu!
     </b-alert>
 
-    <!-- Modal Pessoa -->
+    <!-- Componente Modal Pessoa -->
     <form-person :active.sync="active" @addPerson="addItem"></form-person>
   </div>
 </template>
 
 <script>
+import HeadPages from "./includes/headPages.vue";
 import FormPerson from "./modals/FormPerson.vue";
+
 export default {
   components: {
-    FormPerson
+    FormPerson,
+    HeadPages
   },
   data() {
     return {
@@ -125,6 +142,10 @@ export default {
         sobrenome: form.sobrenome
       });
       this.active = false;
+    },
+
+    verMais() {
+      this.$router.push({ name: "fullName" });
     }
   }
 };

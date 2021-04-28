@@ -63,6 +63,7 @@
 
 <script>
 export default {
+  name:"FormPerson",
   props: {
     active: {
       type: Boolean,
@@ -71,6 +72,7 @@ export default {
   },
   data() {
     return {
+      data: "",
       form: {
         nome: null,
         sobrenome: null,
